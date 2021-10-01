@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(WebServiceApplication.class, args);
+		SpringApplication app = new SpringApplication(WebServiceApplication.class);
+		app.setAdditionalProfiles("initData");
+		app.run(args);
 	}
 
 }

@@ -43,13 +43,13 @@ public final class WineReference {
 	private WineCategory category;
 
 	@ManyToOne
-	@JoinColumn(nullable = true, name = "fk_protected_designation_id")
-	private ProtectedDesignation protectedDesignation;
-
-	@ManyToOne
 	@NotNull
 	@JoinColumn(nullable = false, name = "fk_wine_domain_id")
 	private WineDomain wineDomain;
+	
+	@ManyToOne
+	@JoinColumn(nullable = true, name = "fk_protected_designation_id")
+	private ProtectedDesignation protectedDesignation;
 
 	public WineReference(@NotNull String publicId, @NotNull String name, @NotNull float capacity,
 			@NotNull WineCategory category, @NotNull WineDomain wineDomain) {
@@ -62,7 +62,7 @@ public final class WineReference {
 	}
 
 	public WineReference(@NotNull String publicId, @NotNull String name, @NotNull float capacity,
-			@NotNull WineCategory category, @NotNull WineDomain wineDomain, ProtectedDesignation protectedDesignation) {
+			@NotNull WineCategory category, @NotNull WineDomain wineDomain, @NotNull ProtectedDesignation protectedDesignation) {
 		this(publicId, name, capacity, category, wineDomain);
 		this.protectedDesignation = protectedDesignation;
 	}

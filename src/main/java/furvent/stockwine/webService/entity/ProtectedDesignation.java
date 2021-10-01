@@ -30,9 +30,9 @@ public final class ProtectedDesignation {
 	@NotNull
 	private String name;
 
-	public ProtectedDesignation(@NotNull String name, @NotNull String publicId) {
-		this.name = name;
+	public ProtectedDesignation(@NotNull String publicId, @NotNull String name) {
 		this.publicId = publicId;
+		this.name = name;
 	}
 
 }
