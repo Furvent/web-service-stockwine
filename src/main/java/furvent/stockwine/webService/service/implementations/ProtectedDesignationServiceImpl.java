@@ -10,7 +10,7 @@ import furvent.stockwine.webService.repository.ProtectedDesignationRepository;
 import furvent.stockwine.webService.service.interfaces.ProtectedDesignationService;
 
 @Service
-public class ProtectedDesignationServiceImpl implements ProtectedDesignationService {
+public final class ProtectedDesignationServiceImpl implements ProtectedDesignationService {
 	
 	@Autowired
 	ProtectedDesignationRepository protectedDesignationRepository;

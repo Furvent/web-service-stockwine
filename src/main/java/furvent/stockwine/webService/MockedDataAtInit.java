@@ -57,12 +57,11 @@ public class MockedDataAtInit {
 		// Domain 1
 		this.createWineReferencesWithDataByDomain(new float[] { 0.75f, 0.75f, 0.75f },
 				new WineCategory[] { WineCategory.RED, WineCategory.RED, WineCategory.WHITE },
-				new ProtectedDesignation[] { protectedDesignation1, protectedDesignation1, protectedDesignation3 },
-				wineDomain1);
+				new ProtectedDesignation[] { protectedDesignation1, protectedDesignation1, null }, wineDomain1);
 		// Domain 2
 		this.createWineReferencesWithDataByDomain(new float[] { 0.75f, 0.75f, 1f },
 				new WineCategory[] { WineCategory.RED, WineCategory.RED, WineCategory.SPARKLING },
-				new ProtectedDesignation[] { protectedDesignation1, protectedDesignation1, protectedDesignation2 },
+				new ProtectedDesignation[] { null, protectedDesignation1, protectedDesignation2 },
 				wineDomain2);
 		this.createWineReferencesWithDataByDomain(new float[] { 0.75f, 1f, 0.75f },
 				new WineCategory[] { WineCategory.RED, WineCategory.SPARKLING, WineCategory.WHITE },
