@@ -21,13 +21,18 @@ public final class ProtectedDesignation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@Column(unique = true)
+	@NotNull
+	private String publicId;
 
 	@Column(length = 300)
 	@NotNull
 	private String name;
 
-	public ProtectedDesignation(@NotNull String name) {
+	public ProtectedDesignation(@NotNull String name, @NotNull String publicId) {
 		this.name = name;
+		this.publicId = publicId;
 	}
 
 }
