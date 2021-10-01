@@ -22,11 +22,11 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "wine_reference")
-public class WineReference {
+public final class WineReference {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(unique = true)
 	@NotNull
 	private String publicId;
@@ -34,23 +34,37 @@ public class WineReference {
 	@Column(length = 300)
 	@NotNull
 	private String name;
-	
+
 	@NotNull
 	private float capacity;
-	
+
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private WineCategory category;
-	
+
 	@ManyToOne
-	@JoinColumn(nullable = false, name = "protected_designation_id")
+	@JoinColumn(nullable = true, name = "fk_protected_designation_id")
 	private ProtectedDesignation protectedDesignation;
 
+	@ManyToOne
+	@NotNull
+	@JoinColumn(nullable = false, name = "fk_wine_domain_id")
+	private WineDomain wineDomain;
+
 	public WineReference(@NotNull String publicId, @NotNull String name, @NotNull float capacity,
-			@NotNull WineCategory category) {
+			@NotNull WineCategory category, @NotNull WineDomain wineDomain) {
+		super();
 		this.publicId = publicId;
 		this.name = name;
 		this.capacity = capacity;
 		this.category = category;
+		this.wineDomain = wineDomain;
 	}
+
+	public WineReference(@NotNull String publicId, @NotNull String name, @NotNull float capacity,
+			@NotNull WineCategory category, @NotNull WineDomain wineDomain, ProtectedDesignation protectedDesignation) {
+		this(publicId, name, capacity, category, wineDomain);
+		this.protectedDesignation = protectedDesignation;
+	}
+
 }

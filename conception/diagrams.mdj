@@ -1029,24 +1029,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAF8N4W8KY00m80=",
-											"_parent": {
-												"$ref": "AAAAAAF8N4UcoI0FObQ="
-											},
-											"model": {
-												"$ref": "AAAAAAF8N4W8JY0xRQ8="
-											},
-											"fillColor": "#ffff91",
-											"font": "Arial;13;0",
-											"left": 53,
-											"top": 282,
-											"width": 144.9169921875,
-											"height": 13,
-											"text": "+publicId: String {unique}",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAF8N4XTMo07FHU=",
 											"_parent": {
 												"$ref": "AAAAAAF8N4UcoI0FObQ="
@@ -1057,7 +1039,7 @@
 											"fillColor": "#ffff91",
 											"font": "Arial;13;0",
 											"left": 53,
-											"top": 297,
+											"top": 282,
 											"width": 144.9169921875,
 											"height": 13,
 											"text": "+name: String {unique}",
@@ -1069,7 +1051,7 @@
 									"left": 48,
 									"top": 262,
 									"width": 154.9169921875,
-									"height": 53
+									"height": 38
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -2118,7 +2100,7 @@
 											"top": 538,
 											"width": 229.404296875,
 											"height": 13,
-											"text": "+StreetName: String",
+											"text": "+streetName: String",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5202,16 +5184,6 @@
 						},
 						{
 							"_type": "UMLAttribute",
-							"_id": "AAAAAAF8N4W8JY0xRQ8=",
-							"_parent": {
-								"$ref": "AAAAAAF8N4Ucn4z9KQc="
-							},
-							"name": "publicId",
-							"type": "String",
-							"isUnique": true
-						},
-						{
-							"_type": "UMLAttribute",
 							"_id": "AAAAAAF8N4XTLo044QU=",
 							"_parent": {
 								"$ref": "AAAAAAF8N4Ucn4z9KQc="
@@ -5336,7 +5308,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF8N5F5GJQ9J1U="
 							},
-							"name": "StreetName",
+							"name": "streetName",
 							"type": "String"
 						},
 						{
