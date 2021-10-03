@@ -12,6 +12,7 @@ import furvent.stockwine.webService.entity.ProtectedDesignation;
 import furvent.stockwine.webService.entity.WineDomain;
 import furvent.stockwine.webService.entity.enums.WineCategory;
 import furvent.stockwine.webService.entity.sharedComposition.Address;
+import furvent.stockwine.webService.service.interfaces.AppUserService;
 import furvent.stockwine.webService.service.interfaces.ProtectedDesignationService;
 import furvent.stockwine.webService.service.interfaces.WineDomainService;
 import furvent.stockwine.webService.service.interfaces.WineReferenceService;
@@ -19,6 +20,9 @@ import furvent.stockwine.webService.service.interfaces.WineReferenceService;
 @Profile("initData")
 @Component
 public class MockedDataAtInit {
+	
+	@Autowired
+	AppUserService appUserService;
 
 	@Autowired
 	WineReferenceService wineReferenceService;
@@ -33,6 +37,8 @@ public class MockedDataAtInit {
 
 	@PostConstruct
 	public void initDBPopulating() {
+		// Create user
+		appUserService.create("Simon", "1234");
 		// Address will be used everywhere needed.
 		Address standardAddress = new Address(1, "Street name", "City name", "Region name", "Country name",
 				"Others infos");

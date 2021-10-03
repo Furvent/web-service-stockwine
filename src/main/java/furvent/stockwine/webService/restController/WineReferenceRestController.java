@@ -29,7 +29,7 @@ public class WineReferenceRestController {
 	/**
 	 * 
 	 * @param name Optional, can performs a research by name to get all matching
-	 *             elements.
+	 *             references.
 	 * @return A list of wine references.
 	 */
 	@GetMapping("")
