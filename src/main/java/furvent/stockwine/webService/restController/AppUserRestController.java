@@ -14,13 +14,13 @@ import furvent.stockwine.webService.service.interfaces.AppUserService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/login", headers = "Accept=application/json")
+@RequestMapping(value = "/public", headers = "Accept=application/json")
 public class AppUserRestController {
-	
+
 	@Autowired
 	AppUserService appUserService;
-	
-	@PostMapping("")
+
+	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody LoginForm loginForm) {
 		try {
 			if (appUserService.login(loginForm.getUsername(), loginForm.getPassword())) {
