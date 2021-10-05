@@ -8,4 +8,5 @@ import furvent.stockwine.webService.entity.AppUser;
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
 	public Optional<AppUser> findByUsernameAndPassword(@NotNull String username, @NotNull String password);
+	public Optional<AppUser> findByUsername(@NotNull String username);
 }

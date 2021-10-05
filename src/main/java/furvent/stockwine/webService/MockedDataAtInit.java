@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import furvent.stockwine.webService.entity.ProtectedDesignation;
@@ -32,13 +33,19 @@ public class MockedDataAtInit {
 
 	@Autowired
 	ProtectedDesignationService protectedDesignationService;
+	
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	private int refCounter = 1;
+	
+	public MockedDataAtInit() {
+		bCryptPasswordEncoder = new BCryptPasswordEncoder();
+	}
 
 	@PostConstruct
 	public void initDBPopulating() {
 		// Create user
-		appUserService.create("Simon", "1234");
+		appUserService.create("Simon", bCryptPasswordEncoder.encode("1234"));
 		// Address will be used everywhere needed.
 		Address standardAddress = new Address(1, "Street name", "City name", "Region name", "Country name",
 				"Others infos");
